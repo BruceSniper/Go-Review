@@ -71,6 +71,11 @@ func getType2(s Shape) {
 	}
 }
 
+func printxx(i Shape) {
+	fmt.Println(i.peri())
+	fmt.Println(i.area())
+}
+
 func main() {
 	/*
 		多态:一个事物的多种形态
@@ -87,24 +92,21 @@ func main() {
 
 	var t1 Triangle
 	t1 = Triangle{3, 4, 5}
-	fmt.Println(t1.peri())
-	fmt.Println(t1.area())
+	printxx(t1)
 	fmt.Println(t1.a, t1.b, t1.c)
 
 	var s1 Shape
 	s1 = t1
-	fmt.Println(s1.peri())
-	fmt.Println(s1.area())
+	printxx(s1)
 
 	var c1 Circle
 	c1 = Circle{4}
-	fmt.Println(c1.peri())
-	fmt.Println(c1.area())
+	printxx(c1)
 	fmt.Println(c1.radius)
 
 	var s2 Shape = Circle{5}
 	//s2 = c1
-	fmt.Println(s2.peri(), s2.area())
+	printxx(s2)
 
 	testShape(t1)
 
